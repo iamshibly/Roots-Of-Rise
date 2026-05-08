@@ -5,11 +5,13 @@ const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_P
 // A mock query builder that always returns { data: null, error: null }
 const emptyResult = { data: null, error: null, count: null, status: 200, statusText: 'OK' }
 const mockQueryBuilder: any = new Proxy({}, { // eslint-disable-line @typescript-eslint/no-explicit-any
-  get() {
+  get(target, prop) {
+    if (prop === 'then') {
+      return (resolve: (v: typeof emptyResult) => void) => resolve(emptyResult)
+    }
     return () => mockQueryBuilder
   },
 })
-Object.assign(mockQueryBuilder, { then: (resolve: (v: typeof emptyResult) => void) => resolve(emptyResult) })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const mockAdminClient = { from: () => mockQueryBuilder } as any
