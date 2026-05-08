@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: 'Terms of Use — Roots of Rise' }
 export default function TermsPage() {
   return (
     <>
-      <PageHero title="Terms of Use" breadcrumbs={[{ label: 'Terms of Use' }]} size="sm" />
+      <PageHero title="Terms of Use" breadcrumbs={[{ label: 'Terms of Use' }]} size="sm" backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=400&fit=crop&auto=format" />
       <section className="section">
         <div className="container max-w-3xl">
           <AnimatedSection>

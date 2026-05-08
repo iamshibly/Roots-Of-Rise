@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <PageHero title="Privacy Policy" breadcrumbs={[{ label: 'Privacy Policy' }]} size="sm" />
+      <PageHero title="Privacy Policy" breadcrumbs={[{ label: 'Privacy Policy' }]} size="sm" backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=400&fit=crop&auto=format" />
       <section className="section">
         <div className="container max-w-3xl">
           <AnimatedSection>

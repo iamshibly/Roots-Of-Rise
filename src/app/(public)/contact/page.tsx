@@ -19,6 +19,7 @@ export default function ContactPage() {
         title="Contact Us"
         subtitle="Have a question, partnership idea, or want to collaborate? We'd love to hear from you."
         breadcrumbs={[{ label: 'Contact' }]}
+        backgroundImage="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=500&fit=crop&auto=format"
       />
 
       <section className="section">

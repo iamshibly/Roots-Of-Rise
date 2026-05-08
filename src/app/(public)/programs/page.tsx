@@ -26,6 +26,7 @@ export default function ProgramsPage() {
         title="Our Programs"
         subtitle="Three focused areas of impact. One shared mission to create lasting change."
         breadcrumbs={[{ label: 'Programs' }]}
+        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=500&fit=crop&auto=format"
       />
 
       <section className="section">
