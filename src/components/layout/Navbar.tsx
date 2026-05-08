@@ -46,7 +46,7 @@ export default function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-border'
+          ? 'bg-brand-green/95 backdrop-blur-md shadow-sm border-b border-brand-green-dark/20'
           : 'bg-transparent'
       )}
     >
@@ -62,14 +62,10 @@ export default function Navbar() {
             priority
           />
           <div className="hidden sm:block">
-            <p className={cn('font-heading font-bold text-lg leading-tight transition-colors',
-              scrolled ? 'text-brand-green' : 'text-white'
-            )}>
+            <p className="font-heading font-bold text-lg leading-tight transition-colors text-white">
               Roots of Rise
             </p>
-            <p className={cn('text-xs leading-none transition-colors',
-              scrolled ? 'text-neutral-muted' : 'text-white/70'
-            )}>
+            <p className="text-xs leading-none transition-colors text-white/80">
               {ORG.motto}
             </p>
           </div>
@@ -84,11 +80,8 @@ export default function Navbar() {
                   <button
                     onClick={() => setProgramsOpen(!programsOpen)}
                     className={cn(
-                      'flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                      scrolled
-                        ? 'text-neutral-text hover:text-brand-green hover:bg-brand-green-light'
-                        : 'text-white/90 hover:text-white hover:bg-white/10',
-                      pathname.startsWith('/programs') && scrolled && 'text-brand-green bg-brand-green-light'
+                      'flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-white/90 hover:text-white hover:bg-white/10',
+                      pathname.startsWith('/programs') && 'text-white font-semibold bg-white/10'
                     )}
                   >
                     {link.label}
@@ -126,11 +119,8 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                  scrolled
-                    ? 'text-neutral-text hover:text-brand-green hover:bg-brand-green-light'
-                    : 'text-white/90 hover:text-white hover:bg-white/10',
-                  isActive && scrolled && 'text-brand-green bg-brand-green-light font-semibold',
-                  isActive && !scrolled && 'text-white font-semibold'
+                  'text-white/90 hover:text-white hover:bg-white/10',
+                  isActive && 'text-white font-semibold bg-white/10'
                 )}
               >
                 {link.label}
@@ -148,10 +138,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
                     className={cn(
-                      'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all',
-                      scrolled
-                        ? 'text-neutral-text hover:bg-neutral-light'
-                        : 'text-white hover:bg-white/10'
+                      'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all text-white hover:bg-white/10'
                     )}
                   >
                     <User className="w-4 h-4" />
@@ -195,8 +182,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className={cn(
-            'lg:hidden p-2 rounded-lg transition-colors',
-            scrolled ? 'text-neutral-text hover:bg-neutral-light' : 'text-white hover:bg-white/10'
+            'lg:hidden p-2 rounded-lg transition-colors text-white hover:bg-white/10'
           )}
           aria-label="Toggle menu"
         >
