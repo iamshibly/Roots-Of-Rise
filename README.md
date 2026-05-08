@@ -1,3 +1,11 @@
+# Roots of Rise
+
+🌍 A youth-led nonprofit organization platform.
+
+**Live Demo:** [https://roots-of-rise.vercel.app/](https://roots-of-rise.vercel.app/)
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
