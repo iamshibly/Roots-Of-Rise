@@ -7,7 +7,7 @@ const staticRoutes = [
   '/about',
   '/programs',
   '/programs/education',
-  '/programs/environment',
+  '/programs/environmental-sustainability',
   '/programs/social-welfare',
   '/projects',
   '/impact',
@@ -20,7 +20,7 @@ const staticRoutes = [
   '/terms',
 ]
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map(route => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date(),
