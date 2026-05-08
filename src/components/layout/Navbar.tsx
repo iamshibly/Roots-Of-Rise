@@ -40,7 +40,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
-  const isHome = pathname === '/'
 
   return (
     <header
