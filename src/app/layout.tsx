@@ -55,11 +55,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' },
-      { url: '/images/logo/roots-of-rise-logo.png', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/logo/roots-of-rise-logo.png', sizes: '192x192', type: 'image/png' },
     ],
-    apple: '/images/logo/roots-of-rise-logo.png',
-    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon-32.png',
   },
 }
 
