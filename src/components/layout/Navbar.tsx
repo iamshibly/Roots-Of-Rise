@@ -46,7 +46,7 @@ export default function Navbar() {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled || !isHome
+        scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-border'
           : 'bg-transparent'
       )}
@@ -64,12 +64,12 @@ export default function Navbar() {
           />
           <div className="hidden sm:block">
             <p className={cn('font-heading font-bold text-lg leading-tight transition-colors',
-              scrolled || !isHome ? 'text-brand-green' : 'text-white'
+              scrolled ? 'text-brand-green' : 'text-white'
             )}>
               Roots of Rise
             </p>
             <p className={cn('text-xs leading-none transition-colors',
-              scrolled || !isHome ? 'text-neutral-muted' : 'text-white/70'
+              scrolled ? 'text-neutral-muted' : 'text-white/70'
             )}>
               {ORG.motto}
             </p>
@@ -86,10 +86,10 @@ export default function Navbar() {
                     onClick={() => setProgramsOpen(!programsOpen)}
                     className={cn(
                       'flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                      scrolled || !isHome
+                      scrolled
                         ? 'text-neutral-text hover:text-brand-green hover:bg-brand-green-light'
                         : 'text-white/90 hover:text-white hover:bg-white/10',
-                      pathname.startsWith('/programs') && (scrolled || !isHome) && 'text-brand-green bg-brand-green-light'
+                      pathname.startsWith('/programs') && scrolled && 'text-brand-green bg-brand-green-light'
                     )}
                   >
                     {link.label}
@@ -127,11 +127,11 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
-                  scrolled || !isHome
+                  scrolled
                     ? 'text-neutral-text hover:text-brand-green hover:bg-brand-green-light'
                     : 'text-white/90 hover:text-white hover:bg-white/10',
-                  isActive && (scrolled || !isHome) && 'text-brand-green bg-brand-green-light font-semibold',
-                  isActive && !scrolled && isHome && 'text-white font-semibold'
+                  isActive && scrolled && 'text-brand-green bg-brand-green-light font-semibold',
+                  isActive && !scrolled && 'text-white font-semibold'
                 )}
               >
                 {link.label}
@@ -150,7 +150,7 @@ export default function Navbar() {
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
                     className={cn(
                       'flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all',
-                      scrolled || !isHome
+                      scrolled
                         ? 'text-neutral-text hover:bg-neutral-light'
                         : 'text-white hover:bg-white/10'
                     )}
@@ -197,7 +197,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className={cn(
             'lg:hidden p-2 rounded-lg transition-colors',
-            scrolled || !isHome ? 'text-neutral-text hover:bg-neutral-light' : 'text-white hover:bg-white/10'
+            scrolled ? 'text-neutral-text hover:bg-neutral-light' : 'text-white hover:bg-white/10'
           )}
           aria-label="Toggle menu"
         >
