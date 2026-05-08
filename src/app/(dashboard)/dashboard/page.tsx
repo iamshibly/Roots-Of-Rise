@@ -61,7 +61,7 @@ export default async function DashboardPage() {
           { label: 'Total Applications', value: applications?.length ?? 0, icon: FileText, color: 'text-purple-600 bg-purple-50' },
           { label: 'Open Opportunities', value: openOpportunities?.length ?? 0, icon: TrendingUp, color: 'text-blue-600 bg-blue-50' },
           { label: 'Profile Completion', value: `${completion}%`, icon: User, color: 'text-brand-green bg-brand-green-light' },
-          { label: 'Accepted', value: applications?.filter(a => a.status === 'accepted').length ?? 0, icon: CheckCircle2, color: 'text-green-600 bg-green-50' },
+          { label: 'Accepted', value: applications?.filter((a: { status: string }) => a.status === 'accepted').length ?? 0, icon: CheckCircle2, color: 'text-green-600 bg-green-50' },
         ].map((stat) => (
           <div key={stat.label} className="bg-white rounded-2xl p-5 border border-neutral-border">
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${stat.color}`}>
@@ -100,7 +100,7 @@ export default async function DashboardPage() {
         </div>
         {applications && applications.length > 0 ? (
           <div className="bg-white rounded-2xl border border-neutral-border overflow-hidden">
-            {applications.map((app: VolunteerApplication & { opportunities?: { title: string } }, i) => (
+            {applications.map((app: VolunteerApplication & { opportunities?: { title: string } }, i: number) => (
               <div key={app.id} className={`flex items-center gap-4 p-4 ${i < applications.length - 1 ? 'border-b border-neutral-border' : ''}`}>
                 <div className="w-9 h-9 rounded-full bg-brand-green-light flex items-center justify-center shrink-0">
                   <FileText className="w-4 h-4 text-brand-green" />

@@ -97,7 +97,7 @@ export default async function AdminOverviewPage() {
         </div>
         <div className="bg-white rounded-2xl border border-neutral-border overflow-hidden">
           {recentApps && recentApps.length > 0 ? (
-            recentApps.map((app: Partial<VolunteerApplication>, i) => (
+            recentApps.map((app: Partial<VolunteerApplication>, i: number) => (
               <div
                 key={app.id}
                 className={`flex items-center gap-4 px-5 py-4 ${i < recentApps.length - 1 ? 'border-b border-neutral-border' : ''}`}

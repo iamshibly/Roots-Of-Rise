@@ -1,14 +1,31 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Service role client — bypasses RLS. Never expose to browser.
+const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_URL !== 'https://placeholder.supabase.co'
+
+// A mock query builder that always returns { data: null, error: null }
+const emptyResult = { data: null, error: null, count: null, status: 200, statusText: 'OK' }
+const mockQueryBuilder: any = new Proxy({}, { // eslint-disable-line @typescript-eslint/no-explicit-any
+  get() {
+    return () => mockQueryBuilder
+  },
+})
+Object.assign(mockQueryBuilder, { then: (resolve: (v: typeof emptyResult) => void) => resolve(emptyResult) })
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const supabaseAdmin = createClient<any>(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || 'placeholder_service_role_key',
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  }
-)
+const mockAdminClient = { from: () => mockQueryBuilder } as any
+
+// Service role client — bypasses RLS. Never expose to browser.
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const supabaseAdmin: any = hasSupabase
+  ? createClient<any>(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false,
+        },
+      }
+    )
+  : mockAdminClient
+/* eslint-enable @typescript-eslint/no-explicit-any */
