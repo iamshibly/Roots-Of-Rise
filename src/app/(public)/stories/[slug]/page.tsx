@@ -63,7 +63,8 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-blue/20" />
         <div className="absolute inset-0 flex items-end">
           <div className="container pb-10 text-white">
             <Link href="/stories" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-4 transition-colors">

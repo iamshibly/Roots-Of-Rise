@@ -85,7 +85,8 @@ export default async function ProgramDetailPage({ params }: PageProps) {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+        <div className="absolute inset-0 bg-hero-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-blue/20" />
         <div className="absolute inset-0 flex items-end">
           <div className="container pb-14 text-white">
             <AnimatedSection>

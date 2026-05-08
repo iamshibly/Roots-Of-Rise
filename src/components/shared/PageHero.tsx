@@ -42,7 +42,8 @@ export default function PageHero({
       ) : (
         <div className="absolute inset-0 bg-brand-gradient" />
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40" />
+      <div className="absolute inset-0 bg-hero-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-green/40 via-transparent to-brand-blue/20" />
 
       {/* Decorative circles */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
